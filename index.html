@@ -573,7 +573,38 @@
   <script>
     const W = ['شنبه', 'یکشنبه', 'دوشنبه', 'سه‌شنبه', 'چهارشنبه', 'پنجشنبه', 'جمعه'];
     const fa = n => String(n).replace(/\d/g, d => '۰۱۲۳۴۵۶۷۸۹'[d]);
-    const defaults = [['دکتر احمدی', 10, '3,11,19', '', 1], ['دکتر رضایی', 10, '7,15,23', '', 0], ['دکتر کریمی', 10, '5,13,26', '', 3], ['دکتر محمدی', 10, '2,18,27', '', 2], ['دکتر حسینی', 10, '9,20', '', 5], ['دکتر مرادی', 10, '4,16,28', '', 4]];
+    const defaults = [
+      { name: 'بینش', target: 10, no: '9,10,17,22,23,24,28,6,13,20', only: '1,3', pair: 11, id: 'e2243b7e-ad72-4b89-af85-90632457d0ce' },
+      { name: 'ازادفلاح', target: 10, no: '', only: '1,3', pair: 2, id: '1bdaafb9-5571-45dc-8c02-96f946141f91' },
+      { name: 'مرادیان', target: 10, no: '', only: '1,3', pair: 1, id: 'f59320c0-795c-42d8-aa8c-17d6e89b1227' },
+      { name: 'یوسفی', target: 10, no: '1,2,3,15,16,17,5,12,19,21', only: '', pair: -1, id: '91be3da6-ef7f-46ee-89e3-a5b0e65f7b4a' },
+      { name: 'کفشگری', target: 10, no: '1,2,3', only: '', pair: -1, id: '8a2bd98d-3017-457a-be7c-7ff3c1f88f50' },
+      { name: 'رشمه کریم', target: 10, no: '21,22,23,24', only: '1,3', pair: 22, id: '79a4646b-9551-406a-b14f-768e9385bfad' },
+      { name: 'حومانی', target: 10, no: '29,30', only: '2', pair: 26, id: 'bdfe097d-3710-4b33-9bd0-336e61606511' },
+      { name: 'معتوق', target: 10, no: '', only: '2', pair: 27, id: '2e63a35d-a5aa-46b0-a573-b21a0dde32e9' },
+      { name: 'کاشیان', target: 10, no: '', only: '1,3', pair: 9, id: '0f2895dd-d182-4a3c-b2d8-8e46ff875508' },
+      { name: 'احمدی', target: 10, no: '', only: '1,3', pair: 8, id: '53378260-c925-4819-bb4c-602992f1d766' },
+      { name: 'رمضانپور', target: 10, no: '1,2,3,16', only: '', pair: 16, id: '9a2c4658-5349-4c0a-9d72-cb36fed5d448' },
+      { name: 'میرآخورلی', target: 10, no: '', only: '1,3', pair: 0, id: '774c2ab9-45cf-47c5-b8f9-51861889d64c' },
+      { name: 'یکانی', target: 10, no: '1,2,3,4,23,24,28,29', only: '', pair: 18, id: '9790f69c-2046-41b6-a5fe-0d96e6d88807' },
+      { name: 'بلندین', target: 10, no: '1,2,3', only: '', pair: 14, id: '7f90eb12-eab2-4af9-9afa-dd166781c652' },
+      { name: 'زارع', target: 10, no: '1,2,3', only: '', pair: 13, id: '5402cb25-781e-4a58-9d91-d8ca64068ca8' },
+      { name: 'حیدری', target: 10, no: '27,28,29,30', only: '2', pair: -1, id: 'e70bcb25-1163-4cae-9c63-e37cee56c703' },
+      { name: 'فتاحی', target: 10, no: '1,2,3,16', only: '', pair: 10, id: '4e3e5b14-09ad-4a02-9f60-96b41c975838' },
+      { name: 'مهریزی', target: 10, no: '1,2,3,22,23,24', only: '', pair: 20, id: 'e0564ad6-3a60-47c7-bb91-077c666a2573' },
+      { name: 'عالی', target: 10, no: '1,2,3,4,24,23,28,29', only: '', pair: 12, id: '771953ad-4699-4ded-b5e1-9597954fc26b' },
+      { name: 'قاضی', target: 10, no: '1,2,3,4', only: '', pair: -1, id: '15d45e7e-80d0-49f0-959c-05df3f0fcf8b' },
+      { name: 'کوخاهی', target: 10, no: '1,2,3,22,23,24', only: '', pair: 17, id: 'cd608451-d2cc-4925-a2b7-b67992d7c833' },
+      { name: 'رستمیان', target: 10, no: '', only: '1,3', pair: 24, id: '5a6e8f7d-7422-4050-b03f-231ecdafb735' },
+      { name: 'ایمانی', target: 10, no: '12,13', only: '1,3', pair: 5, id: '05b7b11c-4b48-4a20-ad36-d10068a6cb7e' },
+      { name: 'چابک', target: 10, no: '28,30', only: '2', pair: -1, id: 'b12ecf19-10e8-4a52-8e24-c40ba10a09ab' },
+      { name: 'رستمی', target: 10, no: '', only: '1,3', pair: 21, id: '1ff27516-9888-4119-8301-0f983227efff' },
+      { name: 'سرور', target: 10, no: '1,2,3', only: '', pair: -1, id: 'fb64cd1c-708b-4ddc-9b2e-944e494e81d9' },
+      { name: 'جونی', target: 10, no: '', only: '2', pair: 6, id: '50bd4374-8fbf-48a7-a072-af7fb0e0ef1b' },
+      { name: 'حرب', target: 10, no: '25,26,27,28,29,30', only: '2', pair: 7, id: '9d00b58f-67a0-4a14-93ed-9f93793a16b1' },
+      { name: 'نعیم', target: 10, no: '', only: '2', pair: -1, id: '64743d89-3a64-4aaf-9fa1-b0ae8ef511c2' },
+      { name: 'نظری', target: 10, no: '', only: '2,6,9,12,15,18,20,24,26', pair: -1, id: '0287cc6d-d300-44b7-b717-15d389b3e8fd' }
+    ];
     let people = [], solutions = [], current = 0;
     const $ = s => document.querySelector(s), $$ = s => [...document.querySelectorAll(s)];
     W.forEach((w, i) => $('#start').innerHTML += `<option value="${i}" ${i === 0 ? 'selected' : ''}>${w}</option>`);
@@ -655,7 +686,7 @@
         $('#erCapacity').value = String(storedCap.er); $('#icuCapacity').value = String(storedCap.icu);
       }
     } catch {}
-    let stored = localStorage.getItem('noban-people'); if (stored) { try { people = JSON.parse(stored) } catch { } } if (!people.length) people = defaults.map((x, i) => ({ name: x[0], target: x[1], no: x[2], only: x[3], pair: x[4], id: crypto.randomUUID() })); renderPeople(); updateCounts();
+    let stored = localStorage.getItem('noban-people'); if (stored) { try { people = JSON.parse(stored) } catch { } } if (!people.length) people = defaults.map(p => ({ ...p })); renderPeople(); updateCounts();
   </script>
 </body>
 
